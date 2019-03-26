@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Route::get('groupes', function($n = null){
+    return view('groupes', ['albums' => $n]);
+});*/
+
+Route::get('groupes', 'Groupes@show')->name('groupes');
+
+Route::get('albums', 'Albums@show')->name('albums');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
