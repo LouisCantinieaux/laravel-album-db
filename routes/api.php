@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/albums', 'AlbumsController@index')->name('albums.index');
+
 Route::get('/albums', 'AlbumsController@all')->name('albums.all');
 
 Route ::post('/albums', 'AlbumsController@store')->name('albums.store');
@@ -26,3 +28,9 @@ Route::get('/albums/{albums}', 'AlbumsController@show')->name('albums.show');
 Route::put('/albums/{albums}', 'AlbumsController@update')->name('albums.update');
 
 Route::delete('/albums/{albums}', 'AlbumsController@destroy')->name('albums.destroy');
+
+Route::post('/register', 'AuthController@register');
+
+Route::post('/login', 'AuthController@login');
+
+Route::post('/logout', 'AuthController@logout');

@@ -48,7 +48,7 @@ class AlbumTest extends TestCase
     }
 
     /** @test */
-    public function it_will_show_a_album()
+    public function it_will_show_an_album()
     {
         $this->post(route('albums.store'), [
             'title'       => 'This is a title',
